@@ -6,13 +6,14 @@ import time
 import requests
 from datetime import datetime
 import pandas as pd
+import os
 
 # ──────────────────────────────────────────────
 #  CONFIGURATION
 # ──────────────────────────────────────────────
 
-TELEGRAM_BOT_TOKEN = "8068704120:AAGnUYE-G2_YjQu1g-2qinIudK0zh9-q07Q"
-TELEGRAM_CHAT_ID   = "1726889279"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID   = os.getenv("TELEGRAM_CHAT_ID")
 
 # How many top pairs to scan (sorted by 24h volume)
 TOP_N = 150
