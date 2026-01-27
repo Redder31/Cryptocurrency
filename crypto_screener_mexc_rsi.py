@@ -108,26 +108,52 @@ def get_futures_tickers() -> list[dict]:
 
 
 def get_4h_klines(symbol: str) -> pd.DataFrame | None:
-    url = "https://contract.mexc.com/api/v1/contract/kline/"
+    """
+    Fetch recent 4h klines for a MEXC futures symbol.
+    Uses path parameter for symbol and 'Hour4' for interval.
+    """
+    url = f"https://contract.mexc.com/api/v1/contract/kline/{symbol}"
     params = {
-        "symbol": symbol,
-        "interval": "4h",
-        "limit": KLINES_LIMIT,
+        "interval": "Hour4",          # ← must be exactly "Hour4"
+        # No 'limit' param → defaults to most recent 2000 candles
+        # Optionally add start/end timestamps if you want older data
     }
     try:
         r = requests.get(url, params=params, timeout=10)
-        r.raise_for_status()
+        r.raise_for_status()  # raises on 4xx/5xx
         data = r.json()
+        
         if not data.get("success") or not data.get("data"):
+            print(f"No valid kline data for {symbol}: {data.get('msg', 'No data')}")
             return None
 
         klines = data["data"]
-        df = pd.DataFrame(klines, columns=[
-            "open_time", "open", "high", "low", "close", "vol", "amount"
-        ])
+        # The response has separate lists: time, open, high, low, close, vol, amount
+        # Convert to DataFrame
+        df = pd.DataFrame({
+            "open_time": klines["time"],
+            "open": klines["open"],
+            "high": klines["high"],
+            "low": klines["low"],
+            "close": klines["close"],
+            "vol": klines["vol"],
+            "amount": klines["amount"],
+        })
+        
         df["close"] = df["close"].astype(float)
+        df["vol"] = df["vol"].astype(float)
         df = df.sort_values("open_time").reset_index(drop=True)
+        
+        # Optional: check we have enough candles
+        if len(df) < RSI_PERIOD + 10:
+            print(f"Too few candles for {symbol} ({len(df)})")
+            return None
+            
         return df
+        
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error for {symbol}: {http_err} - Status: {r.status_code}")
+        return None
     except Exception as e:
         print(f"Klines failed for {symbol}: {e}")
         return None
