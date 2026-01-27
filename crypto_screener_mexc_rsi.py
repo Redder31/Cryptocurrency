@@ -108,7 +108,7 @@ def get_futures_tickers() -> list[dict]:
 
 
 def get_4h_klines(symbol: str) -> pd.DataFrame | None:
-    url = "https://contract.mexc.com/api/v1/contract/kline"
+    url = "https://contract.mexc.com/api/v1/contract/kline/"
     params = {
         "symbol": symbol,
         "interval": "4h",
