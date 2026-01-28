@@ -23,7 +23,7 @@ RSI_PERIOD      = 14
 RSI_OVERBOUGHT  = 80.0
 
 # How many 4h candles to fetch (must be > RSI_PERIOD)
-KLINES_LIMIT = 100
+KLINES_LIMIT = 50
 
 ALERT_TEMPLATE = """
 Symbol:     {symbol}
@@ -39,19 +39,19 @@ Link:       https://www.mexc.co/futures/{symbol_clean}
 
 def calculate_rsi(series: pd.Series, period: int = 14) -> pd.Series:
     delta = series.diff()
-    gain = delta.where(delta > 0, 0.0)
-    loss = -delta.where(delta < 0, 0.0)
+    gain = delta.clip(lower=0).fillna(0)
+    loss = -delta.clip(upper=0).fillna(0)
 
     avg_gain = gain.rolling(window=period, min_periods=period).mean()
     avg_loss = loss.rolling(window=period, min_periods=period).mean()
 
-    # Smoothed averages after first period
+    # Wilder smoothing starts after first period
     for i in range(period, len(series)):
-        avg_gain.iloc[i] = (avg_gain.iloc[i-1] * (period-1) + gain.iloc[i]) / period
-        avg_loss.iloc[i] = (avg_loss.iloc[i-1] * (period-1) + loss.iloc[i]) / period
+        avg_gain.iloc[i] = (avg_gain.iloc[i-1] * (period - 1) + gain.iloc[i]) / period
+        avg_loss.iloc[i] = (avg_loss.iloc[i-1] * (period - 1) + loss.iloc[i]) / period
 
     rs = avg_gain / avg_loss
-    rsi = 100.0 - (100.0 / (1.0 + rs))
+    rsi = 100 - (100 / (1 + rs))
     return rsi
 
 
@@ -115,7 +115,7 @@ def get_4h_klines(symbol: str) -> pd.DataFrame | None:
     url = f"https://contract.mexc.com/api/v1/contract/kline/{symbol}"
     params = {
         "interval": "Hour4",          # ← must be exactly "Hour4"
-        # No 'limit' param → defaults to most recent 2000 candles
+        "limit": KLINES_LIMIT
         # Optionally add start/end timestamps if you want older data
     }
     try:
