@@ -1,4 +1,9 @@
 {
-  "last_reset_time": 0,
-  "alerted_symbols": []
+  "last_reset_time": 1769587222.195291,
+  "alerted_symbols": [
+    "HYPE_USDT",
+    "XAUT_USDT",
+    "PAXG_USDT",
+    "MUSTOCK_USDT"
+  ]
 }
