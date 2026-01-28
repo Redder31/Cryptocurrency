@@ -1,28 +1,38 @@
-name: MEXC RSI Screener every 4 hours
+name: MEXC RSI Scanner
 
 on:
-  workflow_dispatch:               # allows manual trigger from GitHub UI
+  workflow_dispatch:             # allows manual trigger
 
 jobs:
   scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0           # needed for git commit below
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas
 
-    - name: Run screener
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: python crypto_screener_mexc_rsi.py
+      - name: Run scanner
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python crypto_screener_mexc_rsi.py
+
+      - name: Commit updated state (if changed)
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add state.json || true
+          git diff --staged --quiet || git commit -m "Update RSI scan state [skip ci]"
+          git push || echo "No changes or push failed (maybe no update)"
