@@ -30,7 +30,7 @@ Symbol:     {symbol}
 4H RSI(14): {rsi:.2f}
 24h Vol:    ${volume_usdt:,.0f} USDT
 Timestamp:  {now}
-Link:       https://futures.mexc.com/exchange/{symbol_clean}
+Link:       https://www.mexc.co/futures/{symbol_clean}
 """
 
 # ──────────────────────────────────────────────
