@@ -1,6 +1,9 @@
 {
-  "last_reset_time": 1770724823.144254,
+  "last_reset_time": 1770739227.466799,
   "alerted_symbols": [
-    "POWER_USDT"
+    "PIPPIN_USDT",
+    "POWER_USDT",
+    "OG_USDT",
+    "ORCLSTOCK_USDT"
   ]
 }
