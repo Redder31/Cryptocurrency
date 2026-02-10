@@ -1,9 +1,6 @@
 {
-  "last_reset_time": 1770667225.558756,
+  "last_reset_time": 1770681641.510075,
   "alerted_symbols": [
-    "GPS_USDT",
-    "ZKP_USDT",
-    "POWER_USDT",
-    "KITE_USDT"
+    "ZKP_USDT"
   ]
 }
