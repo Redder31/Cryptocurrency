@@ -1,6 +1,8 @@
 {
-  "last_reset_time": 1770825637.759998,
+  "last_reset_time": 1770840023.384172,
   "alerted_symbols": [
-    "PIPPIN_USDT"
+    "PIPPIN_USDT",
+    "BERA_USDT",
+    "TAKE_USDT"
   ]
 }
