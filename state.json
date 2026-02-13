@@ -1,8 +1,10 @@
 {
-  "last_reset_time": 1770998425.176675,
+  "last_reset_time": 1771012822.91587,
   "alerted_symbols": [
     "H_USDT",
     "OM_USDT",
-    "VVV_USDT"
+    "BSV_USDT",
+    "AKE_USDT",
+    "BANK_USDT"
   ]
 }
