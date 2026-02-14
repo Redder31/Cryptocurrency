@@ -1,10 +1,11 @@
 {
-  "last_reset_time": 1771012822.91587,
+  "last_reset_time": 1771027222.622661,
   "alerted_symbols": [
+    "PIPPIN_USDT",
     "H_USDT",
-    "OM_USDT",
-    "BSV_USDT",
+    "VVV_USDT",
+    "NAORIS_USDT",
     "AKE_USDT",
-    "BANK_USDT"
+    "EUL_USDT"
   ]
 }
