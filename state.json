@@ -1,6 +1,12 @@
 {
-  "last_reset_time": 1771056020.795013,
+  "last_reset_time": 1771070421.683194,
   "alerted_symbols": [
-    "TAO_USDT"
+    "PIPPIN_USDT",
+    "POL_USDT",
+    "SPACE_USDT",
+    "ENS_USDT",
+    "COW_USDT",
+    "PYTH_USDT",
+    "HNT_USDT"
   ]
 }
