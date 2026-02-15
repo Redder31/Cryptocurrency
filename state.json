@@ -1,17 +1,13 @@
 {
-  "last_reset_time": 1771113620.666127,
+  "last_reset_time": 1771128019.909536,
   "alerted_symbols": [
     "PEPE_USDT",
     "DOGE_USDT",
     "PIPPIN_USDT",
-    "ONDO_USDT",
     "SPACE_USDT",
-    "SHIB_USDT",
-    "WIF_USDT",
-    "BEAT_USDT",
-    "FLOKI_USDT",
+    "PI_USDT",
     "BTR_USDT",
-    "POPCAT_USDT",
-    "MORPHO_USDT"
+    "USELESS_USDT",
+    "ON_USDT"
   ]
 }
