@@ -1,17 +1,10 @@
 {
-  "last_reset_time": 1771142420.858475,
+  "last_reset_time": 1771156821.43881,
   "alerted_symbols": [
-    "XRP_USDT",
-    "PEPE_USDT",
-    "DOGE_USDT",
-    "XLM_USDT",
-    "PI_USDT",
-    "BTR_USDT",
     "VVV_USDT",
-    "COMP_USDT",
-    "HNT_USDT",
-    "MORPHO_USDT",
+    "USELESS_USDT",
+    "EUL_USDT",
     "ON_USDT",
-    "EUL_USDT"
+    "HNT_USDT"
   ]
 }
