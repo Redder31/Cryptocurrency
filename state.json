@@ -1,4 +1,6 @@
 {
-  "last_reset_time": 1771171222.085308,
-  "alerted_symbols": []
+  "last_reset_time": 1771185621.544921,
+  "alerted_symbols": [
+    "INIT_USDT"
+  ]
 }
