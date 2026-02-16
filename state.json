@@ -1,6 +1,8 @@
 {
-  "last_reset_time": 1771185621.544921,
+  "last_reset_time": 1771200022.629343,
   "alerted_symbols": [
-    "INIT_USDT"
+    "VVV_USDT",
+    "INIT_USDT",
+    "HNT_USDT"
   ]
 }
