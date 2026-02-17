@@ -1,9 +1,7 @@
 {
-  "last_reset_time": 1771315221.017171,
+  "last_reset_time": 1771329620.861276,
   "alerted_symbols": [
-    "INIT_USDT",
-    "RPL_USDT",
-    "ARIA_USDT",
-    "ORCA_USDT"
+    "ORCA_USDT",
+    "JELLYJELLY_USDT"
   ]
 }
