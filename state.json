@@ -1,6 +1,7 @@
 {
-  "last_reset_time": 1771574422.542214,
+  "last_reset_time": 1771588823.121133,
   "alerted_symbols": [
-    "LYN_USDT"
+    "LYN_USDT",
+    "BAN_USDT"
   ]
 }
