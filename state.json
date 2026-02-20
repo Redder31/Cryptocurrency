@@ -1,8 +1,9 @@
 {
-  "last_reset_time": 1771531222.663209,
+  "last_reset_time": 1771545621.309547,
   "alerted_symbols": [
-    "LYN_USDT",
     "ENSO_USDT",
-    "USOIL_USDT"
+    "LYN_USDT",
+    "USOIL_USDT",
+    "GESTOCK_USDT"
   ]
 }
