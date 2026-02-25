@@ -1,9 +1,14 @@
 {
-  "last_reset_time": 1772035243.849754,
+  "last_reset_time": 1772049625.095923,
   "alerted_symbols": [
+    "DOT_USDT",
+    "UNI_USDT",
+    "POWER_USDT",
+    "NEAR_USDT",
+    "APT_USDT",
     "DENT_USDT",
-    "NVIDIA_USDT",
+    "GRASS_USDT",
     "CRCLSTOCK_USDT",
-    "AMATSTOCK_USDT"
+    "NVIDIA_USDT"
   ]
 }
