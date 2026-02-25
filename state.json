@@ -1,7 +1,9 @@
 {
-  "last_reset_time": 1771992023.161465,
+  "last_reset_time": 1772006421.889725,
   "alerted_symbols": [
-    "PIEVERSE_USDT",
+    "SIREN_USDT",
+    "DENT_USDT",
+    "ARCSOL_USDT",
     "DAM_USDT"
   ]
 }
