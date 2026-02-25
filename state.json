@@ -1,9 +1,9 @@
 {
-  "last_reset_time": 1772006421.889725,
+  "last_reset_time": 1772020820.069392,
   "alerted_symbols": [
-    "SIREN_USDT",
     "DENT_USDT",
+    "SIREN_USDT",
     "ARCSOL_USDT",
-    "DAM_USDT"
+    "CRCLSTOCK_USDT"
   ]
 }
